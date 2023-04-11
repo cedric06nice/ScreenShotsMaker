@@ -1,3 +1,3 @@
 # ScreenShotsMaker
 
-A description of this package.
+Create screenshots using XCTests.
