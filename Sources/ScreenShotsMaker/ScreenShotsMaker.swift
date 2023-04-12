@@ -10,6 +10,7 @@ import SwiftUI
 public struct ScreenShotsMaker: View, CapturingView {
     public let title: String
     public let image: Image
+    public let imagePadding: Double
     public let background: ImageBackground
     public let exportSize: ExportSize
     public let alignment: TitleAlignment
@@ -19,6 +20,7 @@ public struct ScreenShotsMaker: View, CapturingView {
     public init(
         title: String,
         image: Image,
+        imagePadding: Double,
         background: ImageBackground,
         exportSize: ExportSize,
         alignment: TitleAlignment = .titleAbove,
@@ -27,6 +29,7 @@ public struct ScreenShotsMaker: View, CapturingView {
     ) {
         self.title = title
         self.image = image
+        self.imagePadding = imagePadding
         self.background = background
         self.exportSize = exportSize
         self.alignment = alignment
@@ -63,7 +66,7 @@ public struct ScreenShotsMaker: View, CapturingView {
                     .resizable()
                     .cornerRadius(exportSize.cornerRadius)
                     .scaledToFit()
-                    .padding()
+                    .padding(imagePadding)
                 
                 if case .titleBelow = alignment {
                     Spacer()

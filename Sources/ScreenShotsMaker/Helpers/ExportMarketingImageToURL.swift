@@ -75,6 +75,7 @@ public extension XCUIScreenshot {
     func quickExportWithTitle(
         _ title: String,
         background: ImageBackground,
+        imagePadding: Double,
         exportSize: ExportSize,
         alignment: TitleAlignment,
         font: Font = .system(size: 50, weight: .regular, design: .rounded)
@@ -82,6 +83,7 @@ public extension XCUIScreenshot {
         let capturingView = ScreenShotsMaker(
             title: title,
             image: Image(uiImage: self.image),
+            imagePadding: imagePadding,
             background: background,
             exportSize: exportSize,
             alignment: alignment,
